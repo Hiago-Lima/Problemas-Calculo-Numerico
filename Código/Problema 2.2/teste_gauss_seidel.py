@@ -7,7 +7,6 @@ from gauss_seidel import (criterio_linhas, criterio_sassenfeld, gauss_seidel,
 
 
 def teste_exemplo_do_slide():
-    # Slide 27 do professor: x0 = (-1, 0, 1), dR < 5e-2, solução (1, 1, -1)
     A = np.array([[5.0, 1, 1], [3, 4, 1], [3, 3, 6]])
     b = np.array([5.0, 6, 0])
     r = gauss_seidel(A, b, [-1, 0, 1], precisao=5e-2)
