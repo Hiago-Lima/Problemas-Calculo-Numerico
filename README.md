@@ -21,6 +21,24 @@ O relatório explicativo é um só para a equipe e traz os quatro problemas, o c
 
 ## Como executar
 
+```bash
+cd "Código/Problema 1.2"
+python main.py                        # programa com menu
+python Problema 1.2/teste_problema_1-2.py    # resolve o problema 1.2 pelos 3 métodos e compara o tempo
+python -m unittest discover -s tests  # testes unitários
+```
+ 
+O menu resolve os três problemas do Tópico 1 do enunciado (produção de transistores, resistores e chips, componentes elétricos e minas de areia e cascalho) pelo método de Gauss, pelo de Gauss-Jordan, pela Fatoração LU ou pelos três ao mesmo tempo, comparando os resultados. Também aceita um novo problema de consumo ou qualquer sistema linear digitado, e depois de cada cálculo o programa pergunta se o usuário quer resolver outro ou voltar ao menu principal, de onde pode sair. O teste do problema 1.2 modela o sistema, resolve pelos três métodos mostrando o passo a passo de cada um, confere as soluções por substituição e compara o tempo de execução dos métodos. Cada método está em um arquivo próprio (`metodo_gauss.py`, `metodo_jordan.py` e `metodo_lu.py`, dentro de `topico1_sistemas_diretos/`), e a função `sistemaEquacaoLinear` escolhe qual deles usar.
+ 
+```python
+from .sistemaEquacaoLinear import sistemaEquacaoLinear
+ 
+A = [[15, 17, 19], [0.3, 0.4, 0.55], [1, 1.2, 1.5]]   # linhas: metal, plástico e borracha (g por componente)
+b = [3890, 95, 282]                                   # disponível por dia, em g (3,89 kg, 0,095 kg e 0,282 kg)
+x = sistemaEquacaoLinear(A, b, metodo="lu")           # "gauss", "jordan" ou "lu"
+# x = [90, 60, 80] componentes por dia
+```
+
 Precisa de Python 3. O Gauss-Seidel também usa o `numpy`:
 
 ```bash
