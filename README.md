@@ -21,6 +21,7 @@ O relatório explicativo é um só para a equipe e traz os quatro problemas, o c
 
 ## Como executar
 
+**Problema 1.2 (Componetes Elétricos, Métodos Diretos)**
 ```bash
 cd "Código/Problema 1.2"
 python main.py                        # programa com menu
