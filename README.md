@@ -67,16 +67,23 @@ python minimos_quadrados_scipy.py   # versão otimizada com SciPy e benchmark
 
 O programa resolve o problema oficial da Lei de Moore ou aceita novos dados personalizados para ajuste de curvas. O cálculo analítico detalha todo o Sistema Normal do MMQ, e a versão em SciPy traz os cálculos otimizados com matriz de covariância dos parâmetros.
 
-**Problema 4.1 (rio, Simpson 1/3 repetido)**
-
+***Problema 4.1 (rio, Trapézio e Simpson 1/3 repetidos)**
+ 
 ```bash
 cd "Código/Problema 4.1"
-python teste_simpson.py         # testes
+python main.py                  # programa com menu
+python teste_integracao.py      # testes do trapézio
+python teste_simpson.py         # testes do Simpson
 ```
-
+ 
+O programa calcula a área da seção reta do rio pelos dois métodos e compara os resultados. O menu resolve o rio do enunciado (profundidades de x = 0 a 20 m, com h = 2 m) ou novos dados digitados (o passo h e as profundidades), mostrando a área de cada método e a diferença entre eles, e avisa quando um método não se aplica, já que o Simpson exige número par de intervalos. Depois de cada cálculo o programa volta ao menu, e a opção 0 encerra. O método dos trapézios (`integracao.py`) liga os pontos medidos por retas e soma a área dos n trapézios formados, I = h/2 [y0 + 2(y1 + ... + y(n-1)) + yn], com erro de ordem h². O método de Simpson (`simpson.py`) liga trios de pontos por parábolas, com erro de ordem h⁴.
+ 
 ```python
+from integracao import trapezio_repetido
 from simpson import simpson_repetido
-
+ 
 profundidades = [0, 1.8, 2, 4, 4, 6, 4, 3.6, 3.4, 2.8, 0]
-area = simpson_repetido(profundidades, 2)   # 66.4 m²
+area_trapezio = trapezio_repetido(profundidades, 2)   # 63.2 m²
+area_simpson = simpson_repetido(profundidades, 2)     # 66.4 m²
 ```
+ 
