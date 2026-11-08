@@ -37,6 +37,17 @@ python teste_gauss_seidel.py    # testes
 
 O menu resolve a treliça do enunciado (as cargas e os ângulos podem ser trocados) ou qualquer outro sistema linear digitado. Depois de cada cálculo o programa pergunta se o usuário quer fazer outro ou sair.
 
+**Problema 3.1 (Lei de Moore, Mínimos Quadrados)**
+
+```bash
+cd "Código/Problema 3.1"
+python executar_problema_3_1.py     # programa interativo com menu
+python teste_problema_3_1.py        # testes unitários analíticos
+python minimos_quadrados_scipy.py   # versão otimizada com SciPy e benchmark
+```
+
+O programa resolve o problema oficial da Lei de Moore ou aceita novos dados personalizados para ajuste de curvas. O cálculo analítico detalha todo o Sistema Normal do MMQ, e a versão em SciPy traz os cálculos otimizados com matriz de covariância dos parâmetros.
+
 **Problema 4.1 (rio, Simpson 1/3 repetido)**
 
 ```bash
