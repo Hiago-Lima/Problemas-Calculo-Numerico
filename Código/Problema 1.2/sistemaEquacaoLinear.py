@@ -10,9 +10,14 @@ cada método está no respectivo arquivo.
 """
 import unicodedata
 
-from .metodo_diretoGaus import gauss
-from .metodo_jordan import gauss_jordan
-from .metodo_lu import fatoracao_lu
+try:
+    from .metodo_diretoGaus import gauss
+    from .metodo_jordan import gauss_jordan
+    from .metodo_lu import fatoracao_lu
+except ImportError:      # arquivo usado direto da pasta, sem ser pacote
+    from metodo_diretoGaus import gauss
+    from metodo_jordan import gauss_jordan
+    from metodo_lu import fatoracao_lu
 
 # Registro dos métodos: chave -> (nome para exibir, função).
 METODOS = {

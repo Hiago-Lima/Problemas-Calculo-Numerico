@@ -21,18 +21,25 @@ O relatório explicativo é um só para a equipe e traz os quatro problemas, o c
 
 ## Como executar
 
-**Problema 1.2 (Componetes Elétricos, Métodos Diretos)**
+Os quatro problemas num menu só, na pasta do projeto:
+
+```bash
+python main.py
+```
+
+Cada problema também roda sozinho, como abaixo.
+
+**Problema 1.2 (componentes elétricos, métodos diretos)**
 ```bash
 cd "Código/Problema 1.2"
-python main.py                        # programa com menu
-python Problema 1.2/teste_problema_1-2.py    # resolve o problema 1.2 pelos 3 métodos e compara o tempo
-python -m unittest discover -s tests  # testes unitários
+python main.py                  # programa com menu
+python teste_problema_1-2.py    # resolve o problema 1.2 pelos 3 métodos e compara o tempo
 ```
  
-O menu resolve os três problemas do Tópico 1 do enunciado (produção de transistores, resistores e chips, componentes elétricos e minas de areia e cascalho) pelo método de Gauss, pelo de Gauss-Jordan, pela Fatoração LU ou pelos três ao mesmo tempo, comparando os resultados. Também aceita um novo problema de consumo ou qualquer sistema linear digitado, e depois de cada cálculo o programa pergunta se o usuário quer resolver outro ou voltar ao menu principal, de onde pode sair. O teste do problema 1.2 modela o sistema, resolve pelos três métodos mostrando o passo a passo de cada um, confere as soluções por substituição e compara o tempo de execução dos métodos. Cada método está em um arquivo próprio (`metodo_gauss.py`, `metodo_jordan.py` e `metodo_lu.py`, dentro de `topico1_sistemas_diretos/`), e a função `sistemaEquacaoLinear` escolhe qual deles usar.
+O menu resolve o problema 1.2 do enunciado, um novo problema de produção (tabela de consumo e disponibilidade dos materiais) ou qualquer sistema linear digitado, pelo método de Gauss, pelo de Gauss-Jordan, pela Fatoração LU ou pelos três ao mesmo tempo, comparando os resultados. Dá para ver o passo a passo de cada método, e depois de cada cálculo o programa pergunta se o usuário quer fazer outro ou sair. O teste do problema 1.2 modela o sistema, resolve pelos três métodos mostrando o passo a passo de cada um, confere as soluções por substituição e compara o tempo de execução dos métodos. Cada método está em um arquivo próprio (`metodo_diretoGaus.py`, `metodo_jordan.py` e `metodo_lu.py`), e a função `sistemaEquacaoLinear` escolhe qual deles usar.
  
 ```python
-from .sistemaEquacaoLinear import sistemaEquacaoLinear
+from sistemaEquacaoLinear import sistemaEquacaoLinear
  
 A = [[15, 17, 19], [0.3, 0.4, 0.55], [1, 1.2, 1.5]]   # linhas: metal, plástico e borracha (g por componente)
 b = [3890, 95, 282]                                   # disponível por dia, em g (3,89 kg, 0,095 kg e 0,282 kg)
@@ -40,21 +47,21 @@ x = sistemaEquacaoLinear(A, b, metodo="lu")           # "gauss", "jordan" ou "lu
 # x = [90, 60, 80] componentes por dia
 ```
 
-Precisa de Python 3. O Gauss-Seidel também usa o `numpy`:
+Precisa de Python 3. O Gauss-Seidel também usa o `numpy`, e a versão em SciPy do problema 3.1 usa o `scipy`:
 
 ```bash
-pip install numpy
+pip install numpy scipy
 ```
 
 **Problema 2.2 (treliça, Gauss-Seidel)**
 
 ```bash
 cd "Código/Problema 2.2"
-python gauss_seidel.py          # programa com menu
+python main.py                  # programa com menu
 python teste_gauss_seidel.py    # testes
 ```
 
-O menu resolve a treliça do enunciado (as cargas e os ângulos podem ser trocados) ou qualquer outro sistema linear digitado. Depois de cada cálculo o programa pergunta se o usuário quer fazer outro ou sair.
+O método está em `gauss_seidel.py` e o programa com menu em `main.py`. O menu resolve a treliça do enunciado (as cargas e os ângulos podem ser trocados) ou qualquer outro sistema linear digitado. Depois de cada cálculo o programa pergunta se o usuário quer fazer outro ou sair.
 
 **Problema 3.1 (Lei de Moore, Mínimos Quadrados)**
 
@@ -67,7 +74,7 @@ python minimos_quadrados_scipy.py   # versão otimizada com SciPy e benchmark
 
 O programa resolve o problema oficial da Lei de Moore ou aceita novos dados personalizados para ajuste de curvas. O cálculo analítico detalha todo o Sistema Normal do MMQ, e a versão em SciPy traz os cálculos otimizados com matriz de covariância dos parâmetros.
 
-***Problema 4.1 (rio, Trapézio e Simpson 1/3 repetidos)**
+**Problema 4.1 (rio, Trapézio e Simpson 1/3 repetidos)**
  
 ```bash
 cd "Código/Problema 4.1"

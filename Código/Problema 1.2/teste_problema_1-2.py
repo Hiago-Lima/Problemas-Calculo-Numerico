@@ -20,10 +20,13 @@ import random
 import sys
 import time
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # Funções do projeto: o seletor de método e o registro com os três métodos
-from .sistemaEquacaoLinear import METODOS, sistemaEquacaoLinear  
+try:
+    from .sistemaEquacaoLinear import METODOS, sistemaEquacaoLinear
+except ImportError:      # rodando o arquivo direto, sem ser pacote
+    from sistemaEquacaoLinear import METODOS, sistemaEquacaoLinear
 
 # DADOS DO PROBLEMA 1.2
 

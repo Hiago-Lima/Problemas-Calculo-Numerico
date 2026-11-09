@@ -56,7 +56,8 @@ def comparar(y, h):
     # Comparativo
     if area_trap is not None and area_simp is not None:
         diff = abs(area_simp - area_trap)
-        print(f"\nDiferença |Simpson - Trapézio|: {diff:.4f} m² ({(diff/area_simp)*100:.2f}%)")
+        relativa = f" ({(diff/area_simp)*100:.2f}%)" if area_simp else ""
+        print(f"\nDiferença |Simpson - Trapézio|: {diff:.4f} m²{relativa}")
         print("Conclusão: Simpson é mais preciso para leitos curvos por usar parábolas.")
 
 
