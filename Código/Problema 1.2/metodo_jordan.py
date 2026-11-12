@@ -3,9 +3,6 @@
 Ideia do método: em vez de parar na forma triangular (como o método de Gauss),
 continuamos até transformar a matriz A na matriz IDENTIDADE. Quando isso acontece,
 a coluna do lado direito já é a solução, e não há retrosubstituição.
-
-Este arquivo é INDEPENDENTE: não importa nada do projeto, então pode ser
-copiado e usado sozinho. Se o sistema for singular, levanta ZeroDivisionError.
 """
 
 
