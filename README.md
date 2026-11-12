@@ -4,7 +4,7 @@
 Disciplina de Cálculo Numérico, Prof. Jorge Cavalcanti
 
 **Equipe:** Arthur Lincoln, Raioni Felix e Hiago Lima
-**Apresentação:** 17/11
+**Apresentação:** 12/11, às 9h
 
 ---
 
@@ -18,6 +18,8 @@ Disciplina de Cálculo Numérico, Prof. Jorge Cavalcanti
 | 4.1 | Integração numérica | Área da seção reta de um rio | Trapézio e Simpson repetidos | `Código/Problema 4.1/` |
 
 O relatório explicativo é um só para a equipe e traz os quatro problemas, o código e o que cada membro fez.
+
+**Relatório:** [Relatório da Atividade — Cálculo Numérico 2026.2 (Google Docs)](https://docs.google.com/document/d/1b0XbhC7Xs4WKsIsqY3AKN3w_Ss5DtlDwZjH5NxPE-80/edit)
 
 ## Como executar
 
